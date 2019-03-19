@@ -4,8 +4,6 @@
 # Author:
 #   jiaxin
 
-
-
 module.exports = (robot) ->
     robot.respond /news/i, (msg) -> 
         msg.http("https://api.chainnews.com/api/news.json?size=5")
