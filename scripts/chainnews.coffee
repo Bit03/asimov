@@ -24,6 +24,6 @@ module.exports = (robot) ->
     robot.router.post '/chainnews/news/:room', (req, res) ->
         room   = req.params.room
         data   = if req.body.payload? then JSON.parse req.body.payload else req.body
-        secret = data.secret
-        robot.messageRoom room, "I have a secret: #{secret}"
+        # secret = data.secret
+        robot.messageRoom room, "I have a secret: #{data.title}"
         res.send 'OK'
