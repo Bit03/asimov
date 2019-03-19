@@ -25,5 +25,5 @@ module.exports = (robot) ->
         room   = req.params.room
         data   = if req.body.payload? then JSON.parse req.body.payload else req.body
         # secret = data.secret
-        robot.messageRoom room, "I have a secret: #{data.title}"
+        robot.messageRoom room, "#{data.title} - #{data.refer_link}"
         res.send 'OK'
