@@ -2,6 +2,5 @@
   "hubot-diagnostics",
   "hubot-help",
   "hubot-redis-brain",
-  "hubot-rules",
-  "hubot-rss-reader"
+  "hubot-rules"
 ]
