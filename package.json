@@ -1,6 +1,6 @@
 {
   "name": "2b",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "author": "jiaxin <edison7500@gmail.com>",
   "description": "freedom",
@@ -18,7 +18,8 @@
     "hubot-rules": "^1.0.0",
     "hubot-scripts": "^2.17.2",
     "hubot-shell": "^1.0.2",
-    "hubot-shipit": "^0.2.1"
+    "hubot-shipit": "^0.2.1",
+    "yargs": "^14.0.0"
   },
   "engines": {
     "node": "0.10.x"
