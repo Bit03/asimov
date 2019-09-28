@@ -1,3 +1,9 @@
+// Commands:
+//    hubot deploy <project name> - 通过 Ansible 部署项目 <project name>
+//
+// Author:
+//  jiaxin 
+
 const yargs = require("yargs");
 const spawn = require("child_process").spawn;
 
