@@ -13,8 +13,8 @@ module.exports = function(robot){
         }, function(argv){
             const projectName = argv.project;
             msg.send(`(waiting) Deploying #${projectName} (tea)`);
-            const process = spawn(`/Users/xiejiaxin/.virtualenvs/hadron/bin/ansible-playbook -i hosts ${projectName}.yml`, [], {
-                cwd: "/Users/xiejiaxin/PycharmProjects/bit003/ansible",
+            const process = spawn(`/root/.virtualenvs/ansible/bin/ansible-playbook -i hosts ${projectName}.yml`, [], {
+                cwd: "/opt/ansible",
                 shell: true,
             });
             process.stdout.on('data', function(data){
