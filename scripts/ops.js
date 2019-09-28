@@ -9,16 +9,23 @@ module.exports = function(robot){
                 type: "string",
                 default: 'quark',
                 describe: 'project name',
+            }).option("debug", {
+                alias: 'd',
+                describe: 'enable debug output',
+                type: 'boolean',
+                default: false,
             })
         }, function(argv){
             const projectName = argv.project;
-            msg.send(`(waiting) Deploying #${projectName} (tea)`);
+            msg.send(`(waiting) Deploying #${projectName} :coffee:`);
             const process = spawn(`/root/.virtualenvs/ansible/bin/ansible-playbook -i hosts ${projectName}.yml`, [], {
                 cwd: "/opt/ansible",
                 shell: true,
             });
             process.stdout.on('data', function(data){
-                msg.send(`${data}`);
+                if (argv.debug) {
+                    msg.send(`${data}`);
+                }
             });
             process.stderr.on('data', function(data){
                 msg.send(`${data}`);
