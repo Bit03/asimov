@@ -23,7 +23,7 @@ module.exports = function(robot){
             })
         }, function(argv){
             const projectName = argv.project;
-            msg.send(`(waiting) Deploying #${projectName} :coffee:`);
+            msg.send(`:alarm_clock: Deploying #${projectName} :coffee:`);
             const process = spawn(`/root/.virtualenvs/ansible/bin/ansible-playbook -i hosts ${projectName}.yml`, [], {
                 cwd: "/opt/ansible",
                 shell: true,
@@ -40,7 +40,7 @@ module.exports = function(robot){
                 if (code !== 0) {
                     msg.send('(boom) Deployment failed');
                   } else {
-                    msg.send(`(successful) Deployment completed. You can access it using https://www.block123.com`);
+                    msg.send(`:heavy_check_mark: Deployment completed.`);
                   }
             });
         }).help();
