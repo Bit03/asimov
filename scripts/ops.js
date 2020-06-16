@@ -9,6 +9,9 @@ const spawn = require("child_process").spawn;
 
 
 module.exports = function(robot){
+    robot.respond(/update ansible/i, function(msg) {
+        msg.send("ok");
+    });
     robot.respond(/deploy (.*)/i, function(msg) {
         let parser = yargs.command("deploy [project]", 'deploy a project', function(yargs){
             yargs.positional('project', {
@@ -50,6 +53,5 @@ module.exports = function(robot){
                 msg.reply(output)
             }
         });
-
     }) 
 }
